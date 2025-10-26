@@ -3,30 +3,35 @@ import { useParams, useLocation } from "react-router-dom";
 import { PUZZLES_DATA } from "../data/puzzlesData";
 import PUZZLE_TYPES from "../puzzles";
 import SolvedEffect from "../effects/SolvedEffect";
+import CinematicScene from "../components/CinematicScene";
+import VaultPage from "./VaultPage";
+import FinalePage from "./FinalePage";
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
 
 export default function CluePage() {
-  const { id } = useParams();
+  const { id: paramId } = useParams();
+  console.log(paramId);
   const query = useQuery();
   const providedToken = query.get("hint");
   const [puzzle, setPuzzle] = useState(null);
   const [solved, setSolved] = useState(false);
-  const [now, setNow] = useState(new Date());
+
+  const path = location.pathname.toLowerCase();
+  const isVault = path.includes("/vault");
+  const isFinale = path.includes("/finale");
+  const pageId = isVault ? "vault" : isFinale ? "finale" : paramId;
+  console.log(pageId);
 
   useEffect(() => {
-    const timer = setInterval(() => setNow(new Date()), 1000);
-    return () => clearInterval(timer);
-  }, []);
-
-  useEffect(() => {
-    const p = PUZZLES_DATA.find((x) => x.id === id);
+    const p = PUZZLES_DATA.find((x) => x.id === pageId);
     setPuzzle(p || null);
-    const solvedKey = `hunt_solved_${id}`;
+    const solvedKey = `hunt_solved_${pageId}`;
     setSolved(localStorage.getItem(solvedKey) === "1");
-  }, [id]);
+    console.log(p, solvedKey);
+  }, [pageId]);
 
   const PuzzleComponent = useMemo(() => {
     if (!puzzle) return null;
@@ -58,52 +63,16 @@ export default function CluePage() {
     );
   }
 
-  const releaseDate = puzzle.releaseDate ? new Date(puzzle.releaseDate) : null;
-  const isLocked = releaseDate && now < releaseDate;
-  const remainingMs = releaseDate ? releaseDate - now : 0;
-  const hours = Math.floor((remainingMs / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((remainingMs / (1000 * 60)) % 60);
-  const seconds = Math.floor((remainingMs / 1000) % 60);
-
-  // 🎬 Show cinematic “Locked” screen if not yet open
-  if (isLocked) {
-    return (
-      <div className="relative min-h-screen flex items-center justify-center p-6 text-center overflow-hidden">
-        {/* <CinematicScene /> */}
-        <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
-
-        <div className="relative z-10 max-w-lg bg-black/40 border border-yellow-700 rounded-2xl p-8 shadow-xl animate-fade-in">
-          <h1 className="text-4xl font-heading text-yellow-300 mb-4 animate-pulse">
-            🔒 Locked for Now
-          </h1>
-          <p className="text-lg text-yellow-200 mb-2">
-            The next clue will reveal itself on{" "}
-            <span className="font-bold text-yellow-400">
-              {releaseDate.toLocaleDateString(undefined, {
-                weekday: "long",
-                month: "long",
-                day: "numeric",
-              })}
-            </span>
-          </p>
-
-          <div className="mt-4 text-2xl text-yellow-300 font-mono">
-            ⏰ {hours}h {minutes}m {seconds}s
-          </div>
-
-          <p className="mt-4 italic text-yellow-400/80 text-sm">
-            "Patience is the key to every vault…"
-          </p>
-        </div>
-      </div>
-    );
-  }
-
   const hintUnlocked = providedToken === puzzle.hintToken;
+  const pageClass = isVault ? "vault-bg" : isFinale ? "finale-bg" : "map-bg";
 
   return (
-    <div className="min-h-screen flex items-start justify-center p-6 pt-20">
+    <div
+      className={`min-h-screen flex items-start justify-center p-6 pt-20 ${pageClass}`}
+    >
       <SolvedEffect solved={solved} />
+      {isVault && <VaultPage solved={solved} />}
+      {isFinale && <FinalePage solved={solved} />}
       <div className="parchment-overlay"></div>
       <div className="vignette-overlay"></div>
       <div className="max-w-3xl w-full bg-white/5 backdrop-blur rounded p-6 border z-10">

@@ -14,6 +14,7 @@
 //     hintToken: "uniqueHintToken",
 //     nextIsOnline: false, //     // If false, nextClue is shown directly. If true, nextClue is a link to the next online clue.
 //     nextClue: "This is next clue text...",//     // If next clue is offline, nextClue is shown.
+//     releaseDate: "2025-10-20T00:00:00", // 🕓 ISO format (local time or UTC) Clue release date
 //   },
 
 // Then choose the index and add it to the PUZZLES_DATA array in puzzlesData.js
@@ -48,6 +49,7 @@ export const PUZZLE_LIBRARY = [
     continuation: "You hum a familiar tune as you proceed...",
     hintToken: "token456",
     nextIsOnline: true,
+    // releaseDate: "2025-10-27T00:00:00",
   },
   {
     index: 2,
