@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #0b0c10;
+  /* --color-background: #0b0c10;
   --color-surface: #1f2937;
   --color-accent: #facc15;
   --color-muted: #9ca3af;
@@ -10,15 +10,39 @@
   --color-map: #e0c097;
 
   --font-heading: "Cinzel", serif;
-  --font-body: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif; */
 
-  @keyframes pulse-glow {
+  --color-background: #fff7f0; /* Soft cream background */
+  --color-surface: #ffe4e1; /* Blush pink panels */
+  --color-accent: #ff6f61; /* Coral red for highlights */
+  --color-muted: #7f8c8d; /* Soft gray text */
+  --color-secondary: #ffd166; /* Warm gold accent */
+  --color-map: #fcebd7; /* Light parchment tone */
+
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Nunito", sans-serif;
+
+  /* @keyframes pulse-glow {
     0%,
     100% {
       text-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
     }
     50% {
       text-shadow: 0 0 20px #facc15, 0 0 40px #facc15;
+    }
+  } */
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      text-shadow: 0 0 10px rgba(255, 111, 97, 0.5),
+        0 0 20px rgba(255, 193, 7, 0.3);
+      color: var(--color-accent);
+    }
+    50% {
+      text-shadow: 0 0 25px rgba(255, 111, 97, 0.8),
+        0 0 50px rgba(255, 193, 7, 0.6);
+      color: var(--color-secondary);
     }
   }
 
@@ -129,7 +153,8 @@ body {
       transparent
     ),
     var(--color-background);
-  background-image: url("/old-map.webp");
+  background-image: url("/lovebg.jpg");
+  /* Change this for bg change*/
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
