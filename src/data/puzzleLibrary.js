@@ -259,7 +259,7 @@ export const PUZZLE_LIBRARY = [
     index: 15,
     id: "eternalreunion",
     puzzleType: "input",
-    puzzleCategory: "riddle",
+    puzzleCategory: "cipher",
     title: "The Eternal Reunion",
     player: "parents",
     storyline:
