@@ -114,7 +114,8 @@ export default function CluePage() {
           For: <span className="font-semibold">{puzzle.player}</span>
         </h3> */}
         <div className="prose mb-4 text-[var(--color-map)] text-center">
-          {puzzle.storyline}
+          {/* {puzzle.storyline} */}
+          <div dangerouslySetInnerHTML={{ __html: puzzle.storyline }} />
         </div>
 
         {!solved ? (
@@ -142,9 +143,10 @@ export default function CluePage() {
             <h4 className="font-medium mb-2 text-yellow-400 text-2xl animate-pulse-glow">
               Well done.
             </h4>
-            <p className="text-[var(--color-accent)]">
-              {puzzle.continuation || "The story continues..."}{" "}
-            </p>
+            <div className="text-[var(--color-accent)]">
+              <div dangerouslySetInnerHTML={{ __html: puzzle.continuation }} />
+              {/* {puzzle.continuation || "The story continues..."}{" "} */}
+            </div>
             {puzzle.nextId && (
               <div className="mt-2 text-sm">
                 {puzzle.nextIsOnline ? (
