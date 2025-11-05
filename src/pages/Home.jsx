@@ -10,17 +10,17 @@ export default function Home() {
       <div className="parchment-overlay"></div>
       <div className="vignette-overlay"></div>
       <h1 className="text-5xl md:text-7xl font-heading text-[var(--color-accent)] animate-pulse-glow mb-6 z-10">
-        Mystic Treasure Hunt
+        🌸 The Scent-ence Quest: A Whiff of Wit
       </h1>
       <p className="max-w-2xl text-[var(--color-muted)] mb-8 z-10">
-        Step into an ancient map come alive
+        Five clues. One fragrance. Infinite banter.
       </p>
       <div className="space-x-4 z-10">
         <button
           onClick={() => navigate(`/clue/${PUZZLES_DATA[0].id}`)}
           className="glow-button-dark px-6 py-3 rounded-2xl font-semibold"
         >
-          Start the Hunt
+          Seek the Treasure
         </button>
       </div>
     </div>

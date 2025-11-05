@@ -160,7 +160,11 @@ export default function CluePage() {
                     </a>
                   </>
                 ) : (
-                  <>Next Clue: {puzzle.nextClue || "Offline clue available"} </>
+                  puzzle.nextClue && (
+                    <>
+                      Next Clue: {puzzle.nextClue || "Offline clue available"}{" "}
+                    </>
+                  )
                 )}
               </div>
             )}
