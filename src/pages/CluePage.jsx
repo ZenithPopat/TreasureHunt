@@ -33,11 +33,30 @@ export default function CluePage() {
     return PUZZLE_TYPES[puzzle.puzzleType] || null;
   }, [puzzle]);
 
-  function handleSolvedLocal() {
+  async function handleSolvedLocal() {
     if (!puzzle) return;
     const key = `hunt_solved_${puzzle.id}`;
     localStorage.setItem(key, "1");
     setSolved(true);
+
+    try {
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbzwZXZlI_8JCKirxim28VKw6NLwbxmT0QImFscgiYh5sUXrRR07y6uE9oeHNjxe90J3/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            player: localStorage.getItem("hunt_player_name") || "Guest",
+            clueId: puzzle.id,
+            answer: puzzle.answer,
+          }),
+        }
+      );
+      console.log("done");
+    } catch (err) {
+      console.error("Logging failed:", err);
+    }
   }
 
   if (!puzzle) {
