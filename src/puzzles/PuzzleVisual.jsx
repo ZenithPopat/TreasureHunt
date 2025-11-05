@@ -25,6 +25,11 @@ export default function PuzzleVisual({ puzzle, onSolved }) {
           className="mx-auto mb-4 rounded shadow-lg border border-yellow-300"
         />
       )}
+      {puzzle.clue && (
+        <div className="p-3 bg-white/10 rounded mb-3 whitespace-pre-line">
+          {puzzle.clue}
+        </div>
+      )}
       <input
         type="text"
         value={input}
@@ -32,6 +37,7 @@ export default function PuzzleVisual({ puzzle, onSolved }) {
         placeholder="Enter your answer"
         className="p-2 rounded w-full text-center border border-amber-200"
       />
+
       <div className="mt-3">
         <button onClick={checkAnswer} className="glow-button px-4 py-2 rounded">
           Submit

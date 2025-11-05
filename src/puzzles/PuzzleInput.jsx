@@ -43,8 +43,10 @@ export default function PuzzleInput({ puzzle, onSolved }) {
 
   return (
     <div className="max-w-2xl mx-auto text-center">
-      {puzzle.clue && puzzle.puzzleCategory !== "riddle" && (
-        <div className="p-3 bg-white/10 rounded mb-3">{puzzle.clue}</div>
+      {puzzle.clue && (
+        <div className="p-3 bg-white/10 rounded mb-3 whitespace-pre-line">
+          {puzzle.clue}
+        </div>
       )}
 
       {/* <p className="mb-2 font-medium">{puzzle.storyline}</p> */}
