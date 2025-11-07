@@ -291,23 +291,43 @@ export const PUZZLE_LIBRARY = [
     nextIsOnline: false,
     // nextClue: "Proceed to Clue 2 — The Austen Affair.",
   },
+  // {
+  //   index: 17,
+  //   id: "theAustenAffair",
+  //   puzzleType: "visual",
+  //   puzzleCategory: "literaryRiddle",
+  //   title: "📖 Scent-ence Two: The Austen Affair",
+  //   player: "Dr. Himani Sharma",
+  //   storyline:
+  //     "The Keeper now guides you to a world where hearts wear corsets and minds duel with manners. Books whisper of ballroom banter and teacup tension — tread carefully among them.<br><br>He smiles slyly, <i>“Jane Austen's wit is sharper than a thorn — can you find where her worlds entwine?”</i><br><br>The Custodian appears beside a flickering candle, balancing a teacup on a stack of well-loved novels.<i>“Every scent has its setting,”</i> they muse. <i>“And this one is bound in leather and wit.”</i><br><br>A scroll appears with new riddle appears, its words laced with literary fragrance.",
+  //   hint: "Think of where all of Austen's worlds meet — not in her novels, but on the shelves.",
+  //   // clue: "Hmm... Something seems odd!!",
+  //   clue: "The ink shimmers strangely, curling in ways the eye can't quite follow.\n\nThe Custodian hums softly, turning the scroll this way and that.\n“Curious,” he murmurs. “Some meanings reveal themselves only when the world tilts a little… and patience looks from a different angle.”",
+  //   answer: "library",
+  //   imageUrl: "/images/reverse2.png",
+  //   continuation:
+  //     "<i>“Ah, every heart finds its volume there,”</i> murmurs the Keeper.<br><br>A faint fragrance lingers in the margins — sandalwood and intrigue.<br><br><i>“Next, follow the ciphered trail,”</i> he says cunningly.<i> “For scent, like literature, loves a little secrecy.”</i> <br><br>The Custodian nods, <i>“Onward to the next chapter where the true essence awaits behind the veil of cipher.”</i>",
+  //   hintToken: "austenHint02",
+  //   nextIsOnline: false,
+  //   // nextClue: "Proceed to Clue 3 — Cipher of the Senses.",
+  // },
   {
     index: 17,
     id: "theAustenAffair",
-    puzzleType: "input",
+    puzzleType: "visual",
     puzzleCategory: "literaryRiddle",
     title: "📖 Scent-ence Two: The Austen Affair",
     player: "Dr. Himani Sharma",
     storyline:
-      "The Keeper now guides you to a world where hearts wear corsets and minds duel with manners. Books whisper of ballroom banter and teacup tension — tread carefully among them.<br><br>He smiles slyly, <i>“Jane Austen's wit is sharper than a thorn — can you find where her worlds entwine?”</i><br><br>The Custodian appears beside a flickering candle, balancing a teacup on a stack of well-loved novels.<i>“Every scent has its setting,”</i> they muse. <i>“And this one is bound in leather and wit.”</i><br><br>A new riddle appears, its words laced with literary fragrance.",
+      "The Keeper now guides you to a world where hearts wear corsets and minds duel with manners. Books whisper of ballroom banter and teacup tension — tread carefully among them.<br><br>He smiles slyly, <i>“Jane Austen's wit is sharper than a thorn — can you find where her worlds entwine?”</i><br><br>The Custodian appears beside a flickering candle, balancing a teacup on a stack of well-loved novels. <i>“Every scent has its setting,”</i> they muse. <i>“And this one is bound in leather and wit.”</i><br><br>From between the pages, a small scroll slips free — its ink glimmers oddly under the candlelight, as though reluctant to be read the right way around.<br><br>The ink shimmers strangely, curling in ways the eye can't quite follow.<br><br>The Custodian hums softly, turning the scroll this way and that.<br><i>“Curious,”</i> he murmurs. <i>“Some meanings reveal themselves only when the world tilts a little… and patience looks from a different angle.”</i>",
     hint: "Think of where all of Austen's worlds meet — not in her novels, but on the shelves.",
-    clue: "She had sense and he had sensibility.\nBetween wit and vanity she found probability.\nI'm a world where pride meets persuasion —\na shelf where love letters gain education.\nWhat am I?",
+    // clue: "The ink shimmers strangely, curling in ways the eye can't quite follow.\n\nThe Custodian hums softly, turning the scroll this way and that.\n“Curious,” he murmurs. “Some meanings reveal themselves only when the world tilts a little… and patience looks from a different angle.”",
     answer: "library",
+    imageUrl: "/images/reverse2.png",
     continuation:
-      "<i>“Ah, every heart finds its volume there,”</i> murmurs the Keeper.<br><br>A faint fragrance lingers in the margins — sandalwood and intrigue.<br><br><i>“Next, follow the ciphered trail,”</i> he says cunningly.<i> “For scent, like literature, loves a little secrecy.”</i> <br><br>The Custodian nods, <i>“Onward to the next chapter where the true essence awaits behind the veil of cipher.”</i>",
+      "<i>“Ah, every heart finds its volume there,”</i> murmurs the Keeper.<br><br>A faint fragrance lingers in the margins — sandalwood and intrigue.<br><br><i>“Next, follow the ciphered trail,”</i> he says cunningly. <i>“For scent, like literature, loves a little secrecy.”</i><br><br>The Custodian nods, <i>“Onward to the next chapter, where essence and enigma share a page.”</i>",
     hintToken: "austenHint02",
     nextIsOnline: false,
-    // nextClue: "Proceed to Clue 3 — Cipher of the Senses.",
   },
   {
     index: 18,
@@ -377,7 +397,7 @@ export const PUZZLE_LIBRARY = [
     clue: "The Keeper hands you a final parchment, its ink still fresh: \n\nYou've traced syllables and scents alike — but what lingers when all tales fade? What beats quietly beneath every word, every memory, every fragrance?\n\nWhat, dear seeker, is the true heart of Quloob?",
     answer: "heart",
     continuation:
-      "The parchment dissolves into fragrance. The Keeper steps aside, revealing a small treasure wrapped in green and gold — the final treasure. His tone softens; this is no longer a test, but a toast.<br><br><i>“Congratulations, Dr. Himani Sharma,”</i> he declares, eyes gleaming. <i>“You've proven that wit and wonder still make perfect scents.”</i><br><br>The Custodian's voice drifts through the perfumed air, neither near nor far: <br><i>“The tale finds its fragrance, not its end. May your words rhyme with joy, and your days carry the scent of mischief.”</i><br><br>leaving behind a single victorian folded envelope, its surface reading <b>'The Whiff of Victory'</b>.<br><br>The scent of sandalwood and parchment lingers — the signature of Quloob.",
+      "The parchment dissolves into fragrance. The Keeper steps aside, revealing a small treasure wrapped in green and gold — the final treasure. His tone softens; this is no longer a test, but a toast.<br><br><i>“Congratulations, Himani Sharma,”</i> he declares, eyes gleaming. <i>“You've proven that wit and wonder still make perfect scents.”</i><br><br>The Custodian's voice drifts through the perfumed air, neither near nor far: <br><i>“The tale finds its fragrance, not its end. May your words rhyme with joy, and your days carry the scent of mischief.”</i><br><br>leaving behind a single victorian folded envelope, its surface reading <b>'The Whiff of Victory'</b>.<br><br>The scent of sandalwood and parchment lingers — the signature of Quloob.",
     hintToken: "finalHint05",
     nextIsOnline: false,
     nextClue: "Epilogue — A Whiff of Victory.",
@@ -392,6 +412,7 @@ export const PUZZLE_LIBRARY = [
     storyline:
       "You stand before the gate of the Custodians — a society that keeps the world's forgotten riddles alive. A parchment glows faintly, stamped with the Custodian's seal — a quill entwined with a key.<br><br>Then, a voice — calm, deliberate, and echoing from the parchment itself:<br><br><i>“Before you may enter, you must answer the question that crowns every story.”</i>",
     hint: "It's not a word, but every story has one. It appears before all else, yet says nothing itself.",
+    // <br><br>The voice echoes again, softer this time:<br><br><i>“What is the first thing every tale possesses, yet is never truly read?”</i>
     clue: "I'm born when you start, yet I never begin.\nI end with your end, yet I never am done.\nI can't be read but live within every line.\n(Hint: Think of something that binds words but isn't a word itself.)",
     answer: "title",
     continuation:
