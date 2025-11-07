@@ -382,6 +382,24 @@ export const PUZZLE_LIBRARY = [
     nextIsOnline: false,
     nextClue: "Epilogue — A Whiff of Victory.",
   },
+  {
+    index: 21,
+    id: "theMysteriousLetter",
+    puzzleType: "input",
+    puzzleCategory: "literary",
+    title: "✉️ The Mysterious Letter",
+    player: "Dr. Himani Sharma",
+    storyline:
+      "You stand before the gate of the Custodians — a society that keeps the world's forgotten riddles alive. A parchment glows faintly, stamped with the Custodian's seal — a quill entwined with a key.<br><br>Then, a voice — calm, deliberate, and echoing from the parchment itself:<br><br><i>“Before you may enter, you must answer the question that crowns every story.”</i>",
+    hint: "It's not a word, but every story has one. It appears before all else, yet says nothing itself.",
+    clue: "I'm born when you start, yet I never begin.\nI end with your end, yet I never am done.\nI can't be read but live within every line.\n(Hint: Think of something that binds words but isn't a word itself.)",
+    answer: "title",
+    continuation:
+      "The words align… You have found the title that crowns every tale.<br><br>The Custodian's quill scratches approval onto unseen parchment.<br><br><i>“You've passed the gate,”</i> he murmurs. <i>“Now wait for your invitation — sealed in gold and scented with curiosity. The real test begins when the paper meets your hand.”</i>",
+    imageUrl: "/images/prologue-letter.jpg",
+    hintToken: "prologueHint01",
+    nextIsOnline: false,
+  },
 ];
 // {
 //     index: array index,

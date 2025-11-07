@@ -6,6 +6,7 @@ export const PUZZLES_DATA = [
   { ...PUZZLE_LIBRARY[18] },
   { ...PUZZLE_LIBRARY[19] },
   { ...PUZZLE_LIBRARY[20] },
+  { ...PUZZLE_LIBRARY[21] },
   // { ...PUZZLE_LIBRARY[5] },
   // { ...PUZZLE_LIBRARY[6] },
   // { ...PUZZLE_LIBRARY[7] },
