@@ -28,10 +28,72 @@ export default function CluePage() {
     setSolved(localStorage.getItem(solvedKey) === "1");
   }, [id]);
 
+  useEffect(() => {
+    async function fetchLocation() {
+      try {
+        const res = await fetch("https://ipapi.co/json/");
+        const json = await res.json();
+
+        localStorage.setItem("hunt_ip", json.ip);
+        localStorage.setItem("hunt_country", json.country_name);
+        localStorage.setItem("hunt_city", json.city);
+      } catch (err) {
+        console.log("Failed to fetch location. ", err);
+      }
+    }
+    fetchLocation();
+  }, []);
+
   const PuzzleComponent = useMemo(() => {
     if (!puzzle) return null;
     return PUZZLE_TYPES[puzzle.puzzleType] || null;
   }, [puzzle]);
+
+  function logAttempt(answer, correct) {
+    fetch(
+      "https://script.google.com/macros/s/AKfycbxzQEdDVdG72hnskHfsU5udLnrXdSAIhXQRDyQD80_7HchggAnIyKo4RM4liFGqGHlK/exec",
+      {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          player: localStorage.getItem("hunt_player_name") || "Guest",
+          clueId: puzzle.id,
+          answer: answer,
+          correct: correct,
+          ip: localStorage.getItem("hunt_ip") || "Unknown",
+          country: localStorage.getItem("hunt_country") || "Unknown",
+          city: localStorage.getItem("hunt_city") || "Unknown",
+        }),
+      }
+    );
+  }
+
+  // async function handleSolvedLocal() {
+  //   if (!puzzle) return;
+  //   const key = `hunt_solved_${puzzle.id}`;
+  //   localStorage.setItem(key, "1");
+  //   setSolved(true);
+
+  //   try {
+  //     await fetch(
+  //       "https://script.google.com/macros/s/AKfycbzwZXZlI_8JCKirxim28VKw6NLwbxmT0QImFscgiYh5sUXrRR07y6uE9oeHNjxe90J3/exec",
+  //       {
+  //         method: "POST",
+  //         mode: "no-cors",
+  //         headers: { "Content-Type": "application/json" },
+  //         body: JSON.stringify({
+  //           player: localStorage.getItem("hunt_player_name") || "Guest",
+  //           clueId: puzzle.id,
+  //           answer: puzzle.answer,
+  //         }),
+  //       }
+  //     );
+  //     console.log("done");
+  //   } catch (err) {
+  //     console.error("Logging failed:", err);
+  //   }
+  // }
 
   async function handleSolvedLocal() {
     if (!puzzle) return;
@@ -39,24 +101,8 @@ export default function CluePage() {
     localStorage.setItem(key, "1");
     setSolved(true);
 
-    try {
-      await fetch(
-        "https://script.google.com/macros/s/AKfycbzwZXZlI_8JCKirxim28VKw6NLwbxmT0QImFscgiYh5sUXrRR07y6uE9oeHNjxe90J3/exec",
-        {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            player: localStorage.getItem("hunt_player_name") || "Guest",
-            clueId: puzzle.id,
-            answer: puzzle.answer,
-          }),
-        }
-      );
-      console.log("done");
-    } catch (err) {
-      console.error("Logging failed:", err);
-    }
+    // Log the CORRECT answer
+    logAttempt(puzzle.answer, true);
   }
 
   if (!puzzle) {
@@ -140,7 +186,12 @@ export default function CluePage() {
         {!solved ? (
           <div>
             {PuzzleComponent ? (
-              <PuzzleComponent puzzle={puzzle} onSolved={handleSolvedLocal} />
+              // <PuzzleComponent puzzle={puzzle} onSolved={handleSolvedLocal} />
+              <PuzzleComponent
+                puzzle={puzzle}
+                onSolved={handleSolvedLocal}
+                logAttempt={logAttempt}
+              />
             ) : (
               <div className="p-4">This puzzle type is not supported yet.</div>
             )}

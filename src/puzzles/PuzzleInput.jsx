@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function PuzzleInput({ puzzle, onSolved }) {
+export default function PuzzleInput({ puzzle, onSolved, logAttempt }) {
   const [input, setInput] = useState("");
   const [msg, setMsg] = useState("");
 
@@ -38,6 +38,7 @@ export default function PuzzleInput({ puzzle, onSolved }) {
       onSolved();
     } else {
       setMsg("Incorrect. Try again!");
+      logAttempt(input, false);
     }
   };
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function PuzzleVisual({ puzzle, onSolved }) {
+export default function PuzzleVisual({ puzzle, onSolved, logAttempt }) {
   const [input, setInput] = useState("");
   const [msg, setMsg] = useState(null);
 
@@ -13,6 +13,7 @@ export default function PuzzleVisual({ puzzle, onSolved }) {
       onSolved();
     } else {
       setMsg("Try again!");
+      logAttempt(input, false);
     }
   };
 

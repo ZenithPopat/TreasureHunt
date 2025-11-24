@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function PuzzleMediaAV({ puzzle, onSolved }) {
+export default function PuzzleMediaAV({ puzzle, onSolved, logAttempt }) {
   const [input, setInput] = useState("");
   const [msg, setMsg] = useState(null);
 
@@ -13,6 +13,7 @@ export default function PuzzleMediaAV({ puzzle, onSolved }) {
       onSolved();
     } else {
       setMsg("Incorrect, try again.");
+      logAttempt(input, false);
     }
   };
 

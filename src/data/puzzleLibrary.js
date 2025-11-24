@@ -288,7 +288,7 @@ export const PUZZLE_LIBRARY = [
     continuation:
       "The Custodian smiles. <i>“Ah, you speak fluent verse!”</i><br><br>The Keeper of Quloob nods in approval.\n<i>“One stanza solved, four to go,”</i> he murmurs, the faint scent of sandalwood swirling in the air.\n<br><br>The next Scent-ence awaits — and this one reeks of… character.",
     hintToken: "poeticHint01",
-    nextIsOnline: false,
+    nextIsOnline: true,
     // nextClue: "Proceed to Clue 2 — The Austen Affair.",
   },
   // {
@@ -327,7 +327,7 @@ export const PUZZLE_LIBRARY = [
     continuation:
       "<i>“Ah, every heart finds its volume there,”</i> murmurs the Keeper.<br><br>A faint fragrance lingers in the margins — sandalwood and intrigue.<br><br><i>“Next, follow the ciphered trail,”</i> he says cunningly. <i>“For scent, like literature, loves a little secrecy.”</i><br><br>The Custodian nods, <i>“Onward to the next chapter, where essence and enigma share a page.”</i>",
     hintToken: "austenHint02",
-    nextIsOnline: false,
+    nextIsOnline: true,
   },
   {
     index: 18,
@@ -344,7 +344,7 @@ export const PUZZLE_LIBRARY = [
     continuation:
       "<i>“You've unbottled the secret word itself!”</i> the Custodian exclaims.<br><br>The Keeper sniffs the air approvingly. <i>“But remember,”</i> he warns, <i>“a name is not a scent — it's a promise.”</i><br><br>His voice softens: <i>“Seek now the image that speaks in silence.”</i>",
     hintToken: "cipherHint03",
-    nextIsOnline: false,
+    nextIsOnline: true,
     // nextClue: "Proceed to Clue 4 — The Silent Picture.",
   },
   {
@@ -363,7 +363,7 @@ export const PUZZLE_LIBRARY = [
     continuation:
       "<i>“Correct,”</i> says the Keeper softly. <i>“A memory — the truest fragrance of all.”</i> <br><br>The air shimmers faintly. <br><br><i>“You've nearly reached the heart of it. The final Scent-ence awaits — the heart of it all.”</i> the Custodian says, eyes glinting. <br><br>The Keeper nods, <i>“One last step, Ms Sharma. The essence of Quloob lies just ahead.”</i>",
     hintToken: "silentHint04",
-    nextIsOnline: false,
+    nextIsOnline: true,
     // nextClue: "Proceed to Clue 5 — The Heart of Quloob.",
   },
   // {
